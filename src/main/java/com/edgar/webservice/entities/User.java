@@ -1,9 +1,16 @@
 package com.edgar.webservice.entities;
 
+import jakarta.persistence.*;
+
 import java.io.Serializable;
 import java.util.Objects;
 
+@Entity // entidade
+@Table(name = "tb_user") // nome da tb no bd
 public class User implements Serializable {
+
+    @Id // identificar q é um pk
+    @GeneratedValue (strategy = GenerationType.IDENTITY) // auto increment
 
     private Long id;
     private String name;
