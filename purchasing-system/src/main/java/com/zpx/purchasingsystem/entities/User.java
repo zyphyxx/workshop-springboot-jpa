@@ -1,14 +1,18 @@
 package com.zpx.purchasingsystem.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Data
 @Table(name = "tb_user")
-public class User {
+public class User  {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,7 +22,8 @@ public class User {
     private String phone;
     private String password;
 
-    @OneToMany(cascade = CascadeType.ALL,mappedBy = "client")
-    private List<Order> order;
+    @JsonIgnore
+    @OneToMany(mappedBy = "client")
+    private List<Order> orders = new ArrayList<>();
 
 }

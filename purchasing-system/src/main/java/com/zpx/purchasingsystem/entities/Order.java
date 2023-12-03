@@ -1,14 +1,16 @@
 package com.zpx.purchasingsystem.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.zpx.purchasingsystem.enums.OrderStatus;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.io.Serializable;
+
+
 @Entity
 @Data
 @Table(name = "tb_order")
-public class Order {
+public class Order  {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,7 +22,7 @@ public class Order {
     private OrderStatus orderStatus;
 
     @ManyToOne
-    @JoinColumn(name = "client_id",referencedColumnName = "id")
+    @JoinColumn(name = "client_id")
     private User client;
 
 }

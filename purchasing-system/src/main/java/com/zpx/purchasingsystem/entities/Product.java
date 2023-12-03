@@ -1,13 +1,18 @@
 package com.zpx.purchasingsystem.entities;
 
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import jakarta.persistence.*;
 import lombok.Data;
+
+import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
+
+;
 
 @Entity
 @Table(name = "tb_product")
 @Data
-public class Product {
+public class Product  {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,9 +26,10 @@ public class Product {
 
     private String imgUrl;
 
-    @ManyToOne
-    @JoinColumn(name = "categories_id",referencedColumnName = "id")
-    @JsonDeserialize
-    private Category categories;
+    @ManyToMany
+    @JoinTable(name = "tb_product_category",
+            joinColumns = @JoinColumn(name = "product_id"),
+            inverseJoinColumns = @JoinColumn(name = "category_id"))
+    private Set<Category> categories = new HashSet<>();
 
 }
