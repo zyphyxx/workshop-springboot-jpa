@@ -1,7 +1,9 @@
 package com.zpx.purchasingsystem.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
+import org.aspectj.weaver.ast.Or;
 
 import java.io.Serializable;
 import java.util.HashSet;
@@ -26,10 +28,11 @@ public class Product  {
 
     private String imgUrl;
 
-    @ManyToMany
-    @JoinTable(name = "tb_product_category",
-            joinColumns = @JoinColumn(name = "product_id"),
-            inverseJoinColumns = @JoinColumn(name = "category_id"))
+    @ManyToMany (mappedBy = "products",cascade = CascadeType.ALL)
     private Set<Category> categories = new HashSet<>();
+
+    @ManyToMany(mappedBy = "items",cascade = CascadeType.ALL)
+    @JsonIgnore
+    private Set<Order> orders = new HashSet<>();
 
 }

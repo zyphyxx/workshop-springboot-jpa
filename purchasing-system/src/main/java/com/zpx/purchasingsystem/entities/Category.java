@@ -1,13 +1,10 @@
 package com.zpx.purchasingsystem.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonTypeId;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.io.Serializable;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -21,8 +18,10 @@ public class Category {
 
     private String name;
 
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "category_product", joinColumns = @JoinColumn(name = "category_id"),
+            inverseJoinColumns = @JoinColumn(name = "product_id"))
     @JsonIgnore
-    @ManyToMany(mappedBy = "categories")
     private Set<Product> products = new HashSet<>();
 
 }
