@@ -33,7 +33,6 @@ public class ProductService {
 
     @Transactional
     public void updateProduct (Product product) {
-        product.setId(product.getId());
         productRepository.save(product);
     }
 

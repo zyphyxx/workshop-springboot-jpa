@@ -19,8 +19,22 @@ public class OrderService {
         return orderRepository.findAll();
     }
 
+    public Optional<Order> findOrderById (Long id) {
+        Optional<Order> obj = orderRepository.findById(id);
+        obj.orElseThrow(() -> new RuntimeException("Pedido não encontrado"));
+        return obj;
+    }
+
     @Transactional
     public Order createOrder (Order orders) {
         return orderRepository.save(orders);
     }
+
+    @Transactional
+    public Order updateOrder (Order orders) {
+        findOrderById(orders.getId());
+        return orderRepository.save(orders);
+    }
+
+
 }
