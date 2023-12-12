@@ -1,4 +1,4 @@
-package com.zpx.purchasingsystem.entities;
+package com.zpx.purchasingsystem.domains;
 
 import jakarta.persistence.*;
 import lombok.Data;

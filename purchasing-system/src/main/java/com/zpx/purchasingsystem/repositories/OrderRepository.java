@@ -1,6 +1,6 @@
 package com.zpx.purchasingsystem.repositories;
 
-import com.zpx.purchasingsystem.entities.Order;
+import com.zpx.purchasingsystem.domains.Order;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

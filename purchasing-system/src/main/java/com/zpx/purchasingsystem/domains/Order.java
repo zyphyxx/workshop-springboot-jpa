@@ -1,6 +1,5 @@
-package com.zpx.purchasingsystem.entities;
+package com.zpx.purchasingsystem.domains;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.zpx.purchasingsystem.enums.OrderStatus;
 import jakarta.persistence.*;
 import lombok.Data;

@@ -1,6 +1,6 @@
 package com.zpx.purchasingsystem.controllers;
 
-import com.zpx.purchasingsystem.entities.Category;
+import com.zpx.purchasingsystem.domains.Category;
 import com.zpx.purchasingsystem.services.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

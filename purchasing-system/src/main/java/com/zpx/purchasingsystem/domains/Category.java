@@ -1,4 +1,4 @@
-package com.zpx.purchasingsystem.entities;
+package com.zpx.purchasingsystem.domains;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;

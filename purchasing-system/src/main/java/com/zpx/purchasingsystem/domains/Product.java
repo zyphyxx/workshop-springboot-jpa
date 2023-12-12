@@ -1,11 +1,9 @@
-package com.zpx.purchasingsystem.entities;
+package com.zpx.purchasingsystem.domains;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
-import org.aspectj.weaver.ast.Or;
 
-import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 

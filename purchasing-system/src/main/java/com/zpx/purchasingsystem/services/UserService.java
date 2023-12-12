@@ -1,6 +1,6 @@
 package com.zpx.purchasingsystem.services;
 
-import com.zpx.purchasingsystem.entities.User;
+import com.zpx.purchasingsystem.domains.User;
 import com.zpx.purchasingsystem.repositories.UserRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;

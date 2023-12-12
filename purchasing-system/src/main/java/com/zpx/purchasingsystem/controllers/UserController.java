@@ -1,6 +1,6 @@
 package com.zpx.purchasingsystem.controllers;
 
-import com.zpx.purchasingsystem.entities.User;
+import com.zpx.purchasingsystem.domains.User;
 import com.zpx.purchasingsystem.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
