@@ -1,4 +1,4 @@
-package com.zpx.purchasingsystem.controllers;
+package com.zpx.purchasingsystem.resources;
 
 import com.zpx.purchasingsystem.domains.Product;
 import com.zpx.purchasingsystem.services.ProductService;
