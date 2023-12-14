@@ -1,39 +1,21 @@
 package com.zpx.purchasingsystem.services;
 
 import com.zpx.purchasingsystem.domains.Product;
-import com.zpx.purchasingsystem.repositories.ProductRepository;
-import jakarta.transaction.Transactional;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.zpx.purchasingsystem.domains.dto.ProductDTO;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
-public class ProductService {
+public interface ProductService {
 
-    @Autowired
-    private ProductRepository productRepository;
+    public List<ProductDTO> findAllProducts();
 
+    public Optional<ProductDTO> findProductById(Long id);
 
-    public List<Product> findAllProducts () {
-        return productRepository.findAll();
-    }
+    public Product createProduct (ProductDTO products);
 
-    public Optional<Product> findProductById (Long id) {
-        Optional<Product> obj = productRepository.findById(id);
-        obj.orElseThrow(() -> new RuntimeException("Produto não encontrado"));
-        return obj;
-    }
-
-    @Transactional
-    public Product createProduct (Product products) {
-        return productRepository.save(products);
-    }
-
-    @Transactional
-    public void updateProduct (Product product) {
-        productRepository.save(product);
-    }
+    public Void updateProduct (ProductDTO product);
 
 }
